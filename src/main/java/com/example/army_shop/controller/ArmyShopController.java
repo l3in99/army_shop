@@ -29,8 +29,8 @@ public class ArmyShopController {
 
   @GetMapping("army_shop")
   public List<Map<String, Object>> armyShop(
-    @RequestParam("year") int year,
-    @RequestParam("month") int month)
+    @RequestParam(value = "year", defaultValue = "2015") int year,
+    @RequestParam(value = "month", defaultValue = "4") int month)
    {
       return armyShopDao.select(year, month);
   }
